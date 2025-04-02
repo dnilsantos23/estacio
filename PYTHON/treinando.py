@@ -3,18 +3,18 @@ import os
 arquivo1 = open('atributos.txt', 'r+')
 arquivo1.write('Escrevendo em arquivos de texto com python!\n')
 arquivo1.write('testando a escrita em arquivos de texto com python!\n')
-
 if arquivo1.closed: # Verifica se o arquivo está fechado
     print("O arquivo está fechado.")
 else:
     print("O arquivo está aberto.")
     arquivo1.close() # Fecha o arquivo se estiver aberto
 
+print(arquivo1.read()) # Lê o conteúdo do arquivo
+print(arquivo1.closed) # Verifica se o arquivo está fechado antes do fechamento
+print(arquivo1.closed) # Verifica se o arquivo está fechado após o fechamento
 with open('atributos.txt', 'r+') as arquivo1:
     # Lê o conteúdo do arquivo e substitui 'testando' por 'testando a leitura'
     print(arquivo1.read().replace('testando a escrita', 'testando a leitura e a escrita')) 
 print(arquivo1.name, type(arquivo1.name)) # Imprime o nome do arquivo e seu tipo
 print(arquivo1.mode) # Imprime o modo de abertura do arquivo
 print(arquivo1.closed) # Verifica se o arquivo está fechado
-
-arquivo2 = open('treinando-em-arquivos-com-python.txt')
